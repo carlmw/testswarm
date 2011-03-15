@@ -47,11 +47,12 @@ if ( $title ) {
 		<?php if ( $_SESSION['username'] && $_SESSION['auth'] == 'yes' ) { ?>
 		<li><strong><a href="/user/<?php echo $_SESSION['username'];?>/"><?php echo $_SESSION['username'];?></a></strong></li>
 		<li><a href="<?php echo $contextpath; ?>/run/<?php echo $_SESSION['username'];?>/">Join the Swarm</a></li>
+		<li><a href="<?php echo $contextpath; ?>/swarm/">View the Swarm</a></li>
 		<li><a href="<?php echo $contextpath; ?>/logout/">Logout</a></li>
 		<?php } else { ?>
 		<li><a href="<?php echo $contextpath; ?>/login/">Login</a></li>
 		<li><a href="<?php echo $contextpath; ?>/signup/">Signup</a></li>
-		<li><a href="<?php echo $contextpath; ?>/swarm/">Swarm</a></li>
+		<li><a href="<?php echo $contextpath; ?>/swarm/">View the Swarm</a></li>
 		<?php } ?>
 <!--		<li><a href="http://github.com/jeresig/testswarm">Source Code</a></li>
 		<li><a href="http://github.com/jeresig/testswarm/issues">Bug Tracker</a></li>
