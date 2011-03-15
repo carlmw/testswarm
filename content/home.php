@@ -1,4 +1,3 @@
-<blockquote>Welcome to the TestSwarm Alpha! Please be aware that TestSwarm is still under heavy testing and during this alpha period data may be lost or corrupted and clients may be unexpectedly disconnected. More information about TestSwarm can be found <a href="http://wiki.github.com/jeresig/testswarm">on the TestSwarm wiki</a>.</blockquote>
 <?php
   $found = 0;
 
@@ -71,9 +70,9 @@ function loadBrowsers($name, $mobile) {
   echo "</div>";
 }
 
-if ( $found ) { ?>
+if ( 0 ) { ?>
 <div class="join">
-<p><strong>TestSwarm Needs Your Help!</strong> You have a browser that we need to test against, you should join the swarm to help us out.</p>
+<p><strong>The OpenCoweb TestSwarm Needs Your Help!</strong> You have a browser that we need to test against, you should join the swarm to help us out.</p>
 <?php if ( !$_SESSION['username'] ) { ?>
 <form action="" method="get">
 	<input type="hidden" name="state" value="run"/>
@@ -87,6 +86,6 @@ if ( $found ) { ?>
 <?php } else { ?>
 <div class="join">
 <p>TestSwarm doesn't need your help at this time. If you wish to help run tests you should load up one of the below browsers.</p>
-<p>If you feel that this may be a mistake, copy the following information (<?php echo $browser; ?> <?php echo $version; ?> <?php echo $os; ?>) and your <a href="http://useragentstring.com/">useragent string</a>, and post it to the <a href="http://groups.google.com/group/testswarm">discussion group</a>.</a>
+<p>If you feel that this may be a mistake, copy the following information (<?php echo $browser; ?> <?php echo $version; ?> <?php echo $os; ?>) and your <a href="http://useragentstring.com/">useragent string</a>, and post it to the <a href="http://groups.google.com/group/opencoweb">discussion group</a>.</a>
 </div>
 <?php } ?>
