@@ -184,7 +184,6 @@
 	}
 
 	echo "$output</tr>\n</tbody>\n</table>";
-	echo $browsers;
 
 	}
 ?>
