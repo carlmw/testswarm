@@ -59,6 +59,9 @@
 
 	while ( $row = mysql_fetch_assoc($result) ) {
 		if ( $row["run_id"] != $last ) {
+	  	if ( $last ) {
+        $addBrowser = false;
+      }
 			$useragents = array();
 
 			$runResult = mysql_queryf("SELECT run_client.client_id as client_id, run_client.status as status, run_client.fail as fail, run_client.error as error, run_client.total as total, clients.useragent_id as useragent_id FROM run_client, clients WHERE run_client.run_id=%u AND run_client.client_id=clients.id ORDER BY useragent_id;", $row["run_id"]);
