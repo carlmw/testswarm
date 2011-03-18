@@ -116,28 +116,24 @@
 	}
 
 	if ( $last ) {
-		if ( $addBrowser ) {
-			$header = "<tr><th></th>\n";
-			$last_browser = array();
-			foreach ( $browsers as $browser ) {
-				if ( $last_browser["id"] != $browser["id"] ) {
-					$header .= '<th><div class="browser">' .
-						'<img src="' . $GLOBALS['contextpath'] . '/images/' . $browser["engine"] .
-						'.sm.png" class="browser-icon ' . $browser["engine"] .
-						'" alt="' . $browser["name"] .
-						'" title="' . $browser["name"] .
-						'"/><span class="browser-name">' .
-						preg_replace('/\w+ /', "", $browser["name"]) . ', ' .
-						'</span></div></th>';
-				}
-				$last_browser = $browser;
+		$header = "<tr><th></th>\n";
+		$last_browser = array();
+		foreach ( $browsers as $browser ) {
+			if ( $last_browser["id"] != $browser["id"] ) {
+				$header .= '<th><div class="browser">' .
+					'<img src="' . $GLOBALS['contextpath'] . '/images/' . $browser["engine"] .
+					'.sm.png" class="browser-icon ' . $browser["engine"] .
+					'" alt="' . $browser["name"] .
+					'" title="' . $browser["name"] .
+					'"/><span class="browser-name">' .
+					preg_replace('/\w+ /', "", $browser["name"]) . ', ' .
+					'</span></div></th>';
 			}
-			$header .= "</tr>\n";
-			$output = $header . $output;
+			$last_browser = $browser;
 		}
-
+		$header .= "</tr>\n";
+		$output = $header . $output;
 		$output .= "</tr>\n";
-		$addBrowser = false;
 	}
 
 	echo "$output</tr>\n</tbody>\n</table>";
