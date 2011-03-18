@@ -83,7 +83,7 @@ if ( 0 ) { ?>
 <?php } else { ?>
 <br/><p><strong>&raquo; <?php echo $_SESSION['username']; ?></strong> <a href="<?php echo $GLOBALS['contextpath']; ?>/run/<?php echo $_SESSION['username']; ?>/">Start Running Tests</a></p>
 <?php } ?>
-<?php } else { ?>
+<?php } else if( 0 ) { ?>
 <div class="join">
 <p>TestSwarm doesn't need your help at this time. If you wish to help run tests you should load up one of the below browsers.</p>
 <p>If you feel that this may be a mistake, copy the following information (<?php echo $browser; ?> <?php echo $version; ?> <?php echo $os; ?>) and your <a href="http://useragentstring.com/">useragent string</a>, and post it to the <a href="http://groups.google.com/group/opencoweb">discussion group</a>.</a>
