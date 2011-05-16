@@ -15,11 +15,11 @@ $doc = new DOMDocument();
 @$doc->loadHTML(file_get_contents($url));
 $xp = new DOMXPath($doc);
 $i = 0;
-while($xp->query("//*[contains(@class, 'notdone')]")->length > 0 && $i < 100){
+while($xp->query("//*[contains(@class, 'notdone')]")->length > 0 && $i < 10){
     @$doc->loadHTML(file_get_contents($url));
     $xp = new DOMXPath($doc);
     
-    echo "Not yet: ".$xp->query("//*[contains(@class, 'notdone')]")->length."\n";
+    echo "Waiting for ".$xp->query("//*[contains(@class, 'notdone')]")->length." browsers.\n";
     
     $i++;
     sleep(5);
