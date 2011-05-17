@@ -2,6 +2,6 @@
 <testsuite id="missingbrowsers" package="Test suite" tests="1" failures="0" errors="1" skip="0">
     <testcase name="Browsers" classname="">
         <error type="MissingBrowser" message="One or more browsers did not respond or have disconnected from the swarm."/>
-        <system-out /><![CDATA[ Reconnect the missing browsers and try again. ]]></system-out>
+        <system-out><![CDATA[ Reconnect the missing browsers and try again. ]]></system-out>
     </testcase>
 </testsuite>

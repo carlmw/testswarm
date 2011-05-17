@@ -1,5 +1,5 @@
 <?php
-$MAX_ATTEMPTS = 1;
+$MAX_ATTEMPTS = 20;
 
 
 $url = $argv[1];
