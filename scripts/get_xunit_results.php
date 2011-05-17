@@ -1,5 +1,5 @@
 <?php
-$MAX_ATTEMPTS = 20;
+$MAX_ATTEMPTS = 1;
 
 
 $url = $argv[1];
@@ -48,7 +48,7 @@ echo "DONE!\n";
 
 if($count < $expect){
     $missing_xml = fopen($target_dir . '/run_missing_browsers.xml', 'w');
-    fwrite($missing_xml, file_get_contents('xunit_browsers_missed.xml'));
+    fwrite($missing_xml, file_get_contents(realpath(dirname($_SERVER['PHP_SELF'])) . '/xunit_browsers_missed.xml'));
     fclose($missing_xml);
     echo "SOME BROWSERS DIDN'T RESPOND\n";
 }
