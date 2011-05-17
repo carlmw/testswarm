@@ -46,7 +46,7 @@ foreach($results as $result){
 }
 echo "DONE!\n";
 
-if($count < $expect){
+if($count > 0){
     $missing_xml = fopen($target_dir . '/run_missing_browsers.xml', 'w');
     fwrite($missing_xml, file_get_contents(realpath(dirname($_SERVER['PHP_SELF'])) . '/xunit_browsers_missed.xml'));
     fclose($missing_xml);
