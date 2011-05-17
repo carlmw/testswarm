@@ -1,3 +1,11 @@
+Reset Job
+=========
+curl --data "job_id=%JOB_ID%&state=wipejob&type=reset" http://swarm-server 
+
+xUnit output
+============
+php /path/to/testswarm/scripts/get_xunit_results.php http://swarm-server/job/%JOB_ID%/ /path/to/write/xunit/xml/to/
+
 Distributed continuous integration for JavaScript.
 
 http://testswarm.com/
