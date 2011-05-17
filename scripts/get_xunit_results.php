@@ -1,4 +1,7 @@
 <?php
+$MAX_ATTEMPTS = 20;
+
+
 $url = $argv[1];
 $target_dir = realpath($argv[2]);
 
@@ -14,12 +17,13 @@ while($file = $d->read()){
 $doc = new DOMDocument();
 @$doc->loadHTML(file_get_contents($url));
 $xp = new DOMXPath($doc);
+$expect = $xp->query("//table[@class='results']//td")->length;
 $i = 0;
-while($xp->query("//*[contains(@class, 'notdone')]")->length > 0 && $i < 10){
+while(($count = $xp->query("//*[contains(@class, 'notdone')]")->length) > 0 && $i < $MAX_ATTEMPTS){
     @$doc->loadHTML(file_get_contents($url));
     $xp = new DOMXPath($doc);
     
-    echo "Waiting for ".$xp->query("//*[contains(@class, 'notdone')]")->length." browsers.\n";
+    echo "Waiting for ". $count ." browsers.\n";
     
     $i++;
     sleep(5);
@@ -40,4 +44,11 @@ foreach($results as $result){
     fwrite($file, $result_xml);
     fclose($file);
 }
-echo 'DONE!';
+echo "DONE!\n";
+
+if($count < $expect){
+    $missing_xml = fopen($target_dir . '/run_missing_browsers.xml', 'w');
+    fwrite($missing_xml, file_get_contents('xunit_browsers_missed.xml'));
+    fclose($missing_xml);
+    echo "SOME BROWSERS DIDN'T RESPOND\n";
+}
