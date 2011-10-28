@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="â Test suite" id="run_id=1&amp;amp;client_id=25" package="â Test suite" tests="2" failures="0" errors="0" skip="0"><properties><property name="useragent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)"/><property name="browser" value="Internet Explorer 7"/><property name="platform" value="xp"/></properties><testcase name="template is loaded" classname="template loader"><system-out><![CDATA[1: okay Expected:  "<div>Here be dragons</div>"
+]]></system-out></testcase><testcase name="template is rendered" classname="testing app.View"><system-out><![CDATA[1: <h1>Here be dragons</h1>
+]]></system-out></testcase></testsuite>

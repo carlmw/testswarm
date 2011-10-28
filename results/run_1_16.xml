@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="â Test suite" id="run_id=1&amp;amp;client_id=16" package="â Test suite" tests="2" failures="0" errors="0" skip="0"><properties><property name="useragent" value="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1) Gecko/20090624 Firefox/3.5 (.NET CLR 3.5.30729)"/><property name="browser" value="Firefox 3.5"/><property name="platform" value="xp"/></properties><testcase name="template is loaded" classname="template loader"><system-out><![CDATA[1: okayExpected: "<div>Here be dragons</div>"
+]]></system-out></testcase><testcase name="template is rendered" classname="testing app.View"><system-out><![CDATA[1: <h1>Here be dragons</h1>
+]]></system-out></testcase></testsuite>
